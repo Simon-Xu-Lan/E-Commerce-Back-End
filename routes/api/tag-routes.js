@@ -12,16 +12,18 @@ router.get('/', (req, res) => {
   // find all tags
   // be sure to include its associated Product data
   Tag.findAll({
-      include: [
-        { 
-          model: Product,
-          through: ProductTag,
-          as: 'product_tags'
-        }
-      ]
-  }).then((Tags) => {
-      res.json(Tags);
-   })
+      include: [{model: Product, as: "tags"}],
+        // { 
+        //   model: Product,
+        //   through: ProductTag,
+        //   as: 'product_tags'
+        // }
+     
+  }).then((tags) => {
+      res.json(tags);
+   }).catch((err) => {
+        catch500Errors(res, err);
+   });
 
 });
 
@@ -29,13 +31,13 @@ router.get('/:id', (req, res) => {
   // find a single tag by its `id`
   // be sure to include its associated Product data
   Tag.findByPk(req.params.id, {
-      include: [
-        { model: Product, 
+      include: 
+        [{ model: Product, 
           as: "tags"
-        }
-      ],
-  }).then((tag) => {
-      res.json(tag);
+        }]
+//       
+  }).then((tags) => {
+      res.json(tags);
   }).catch((err) => {
       catch500Errors(res, err);
   });
@@ -82,12 +84,12 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   // delete on tag by its `id` value
-  Taq.destroy({
+  Tag.destroy({
     where: {
       id: req.params.id,
     },
   }).then(() => {
-      res,json({
+      res.json({
         data: "success",
     });
   }).cath((err) => {

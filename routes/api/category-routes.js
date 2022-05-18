@@ -62,7 +62,7 @@ router.delete('/:id', (req, res) => {
   }).then((result) => {
     res.json({
       data: 'ok'
-    });
+    })
   })
 });
 
