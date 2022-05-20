@@ -4,7 +4,7 @@
 
 ## Description
 
-The e-commerce backend, or server-side, is the data access layer that holds products, orders, and customer information. It helps websites operate by processing, storing, and transferring their data to and from the customer-facing side. These actions are carried out by backend components like the web server, application server, and database which make the frontend interactive. They make it so customers can view products, place orders, and manage their purchases using their own devices. I build the back end for an e-commerce site by modifying starter code. I put together a working Express.js API to use Sequelize to interact with a MySQL database. 
+The e-commerce backend, or server-side, is the data access layer that holds products, orders, and customer information. It helps websites operate by processing, storing, and transferring their data to and from the customer-facing side. These actions are carried out by backend components like the web server, application server, and database which make the frontend interactive. They make it so customers can view products, place orders, and manage their purchases using their own devices. I build the back end for an e-commerce site by modifying starter code. I put together a working Express.js API to use Sequelize to interact with a MySQL database. On the terminal in vsCode go to `mysql -u root -p`, entered password, then `SHOW DATABASES;` entered , then `USE ecommerce_db;` entered and exit. Run `npm run seed` to created seed, then run `npm start`, now listening and go to Insomnia.
 
 ## Table of Contents (Optional)
 
@@ -46,6 +46,8 @@ https://drive.google.com/file/d/10LlEB1JoqkRcsY6GXXgwbdP-UrTugdaR/view
 - https://github.com/Simon-Xu-Lan
 
 - https://github.com/sam-ngu
+
+- https://github.com/cupacheeno
 
 ## License
     This application is covered by the MIT license.

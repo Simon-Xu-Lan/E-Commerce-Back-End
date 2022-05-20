@@ -13,7 +13,6 @@ router.get('/', (req, res) => {
       },
       {
         model: Tag,
-        as: "product_tags"
       }
     ]
   }).then((results) => {
@@ -79,6 +78,13 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
   // update product data
   Product.update(req.body, {
+  //   name: req.body.name,
+  //   price: req.body.price,
+  //   stock: req.body.stock,
+  //   category_id: req.body.category_id,
+  // })
+
+  //   req.body, {
     where: {
       id: req.params.id,
     },
@@ -121,13 +127,13 @@ router.delete('/:id', (req, res) => {
   // delete one product by its `id` value
   Product.destroy({
     where: {
-      id: reg.params.id,
-    }
-  }).then((data) => res.json(data))
-    .catch((err) => {
-    res.status(400).json(
-      err
-    );
+      id: req.params.id,
+    },
+  }).then((result) => {
+    res.json({
+      data: 'ok'
+
+  });
   });
 });
 

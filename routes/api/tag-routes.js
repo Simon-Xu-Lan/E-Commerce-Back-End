@@ -90,12 +90,10 @@ router.delete('/:id', (req, res) => {
     where: {
       id: req.params.id,
     },
-  }).then(() => {
+  }).then((result) => {
       res.json({
-        data: "success",
+        data: 'ok',
     });
-  }).cath((err) => {
-      catch500Errors(res, err);
   });
 });
 
