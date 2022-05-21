@@ -49,15 +49,15 @@ router.post('/', (req, res) => {
   // create a new tag
   /* req.body should look like this...
   {
-    "name": "Basketball",
+    "tag_name": "Basketball",
   }
   */
  Tag.create({
-    name: req.body.name,
+    tag_name: req.body.tag_name,
  }).then((tag) => {
     res.json(tag);
- }).catch((err) => {
-    catch500Errors(res. err);
+//  }).catch((err) => {
+//     catch500Errors(res. err);
  });
 });
 
@@ -65,12 +65,12 @@ router.put('/:id', (req, res) => {
   // update a tag's name by its `id` value
   /* req.body should look like this ...
   {
-    name: "Basketball"
+    tag_name: "Basketball"
   }
   */
   Tag.update(
     {
-      name: req.body.name,
+      tag_name: req.body.tag_name,
     },
     {
       where: {
